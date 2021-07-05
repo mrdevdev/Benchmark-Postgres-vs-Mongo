@@ -25,7 +25,7 @@ def main():
 
     print("Generando dataset...")
     timer_start = time.time()
-    for x in range(100000):  # 100k en 100 segundos
+    for x in range(10000):  # 100k en 100 segundos
         company = {}
         company['name'] = fake.company()
         company['suffix'] = fake.company_suffix()
@@ -79,14 +79,6 @@ def main():
     print("QUERY #5")
     postgres_query_5()
     mongo_query_5()
-
-
-    query2 = "EXPLAIN ANALYZE UPDATE usersJsonB as u1 SET userData = (SELECT jsonb_set(userData, '{company, companyCar, Year}', '2000') FROM usersJsonB as u2 WHERE u1.userId = u2.userId);"
-    query3 = "EXPLAIN ANALYZE UPDATE usersJsonB as u1 SET userData = (SELECT jsonb_insert(userData, '{company, companyCar, licensePlate}', '000-123') FROM usersJsonB as u2 WHERE u1.userId = u2.userId);"
-
-    # TODO: cambiar el WHERE final de la query 4 y 5 con un WHERE sobre los años, ya que puede ser mas fácil
-    query4 = "EXPLAIN ANALYZE UPDATE usersJsonB as u1 SET userData = (SELECT jsonb_set(userData, '{company, companyCar, Year}', '2000') FROM usersJsonB as u2 WHERE u1.userId = u2.userId) WHERE userData #>> '{company, companyCar, Model}' LIKE 'G%';"
-    query5 = "EXPLAIN ANALYZE UPDATE usersJsonB as u1 SET userData = (SELECT jsonb_insert(userData, '{company, companyCar, licensePlate}', '000-123') FROM usersJsonB as u2 WHERE u1.userId = u2.userId) WHERE userData #>> '{company, companyCar, Model}' LIKE 'G%';"
 
 
 if __name__ == '__main__':
