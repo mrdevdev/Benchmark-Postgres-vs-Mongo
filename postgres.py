@@ -45,12 +45,12 @@ query5_string = "UPDATE usersJsonB as u1 " \
                 "WHERE (userData #>> '{company, companyCar, Year}')::int < 2005;"
 
 
-def postgres_query_6(dataset):
+def postgres_query_6(dataset, username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -71,12 +71,12 @@ def postgres_query_6(dataset):
     cur.close()
 
 
-def postgres_query_1():
+def postgres_query_1(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -87,12 +87,12 @@ def postgres_query_1():
     cur.close()
 
 
-def postgres_query_2():
+def postgres_query_2(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -103,12 +103,12 @@ def postgres_query_2():
     cur.close()
 
 
-def postgres_query_3():
+def postgres_query_3(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -119,12 +119,12 @@ def postgres_query_3():
     cur.close()
 
 
-def postgres_query_4():
+def postgres_query_4(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -135,12 +135,12 @@ def postgres_query_4():
     cur.close()
 
 
-def postgres_query_5():
+def postgres_query_5(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
 
     cur = conn.cursor()
     timer_start = time.time()
@@ -151,12 +151,12 @@ def postgres_query_5():
     cur.close()
 
 
-def setup_postgres():
+def setup_postgres(username, password):
     conn = psycopg2.connect(
         host="localhost",
         database="postgres",
-        user="postgres",
-        password="PostgreSQL_99")
+        user=username,
+        password=password)
     cur = conn.cursor()
     cur.execute(create_table_1)
     conn.commit()

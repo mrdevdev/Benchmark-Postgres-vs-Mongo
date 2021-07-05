@@ -4,6 +4,7 @@ import json
 from mongo import *
 from postgres import *
 import time
+import argparse
 
 
 def set_username(name):
@@ -17,6 +18,15 @@ def set_mail(username, mail):
 
 
 def main():
+
+    # PARSE ARGUMENTS
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-pg_username', dest='postgres_username', required=True)
+    parser.add_argument('-pg_password', dest='postgres_password', required=True)
+    args = parser.parse_args()
+    postgres_username = str(args.postgres_username)
+    postgres_password = str(args.postgres_password)
+
     fake = Faker()
     fake.add_provider(VehicleProvider)
 
@@ -47,37 +57,37 @@ def main():
 
     # SETUP
     print("Creando tablas...")
-    setup_postgres()
+    setup_postgres(postgres_username, postgres_password)
     setup_mongo()
 
     # QUERY 6
     print("QUERY #6")
-    postgres_query_6(dataset_string)
+    postgres_query_6(dataset_string, postgres_username, postgres_password)
     mongo_query_6(dataset_dict)
 
     # QUERY 1
     print("QUERY #1")
-    postgres_query_1()
+    postgres_query_1(postgres_username, postgres_password)
     mongo_query_1()
 
     # QUERY 2
     print("QUERY #2")
-    postgres_query_2()
+    postgres_query_2(postgres_username, postgres_password)
     mongo_query_2()
 
     # QUERY 3
     print("QUERY #3")
-    postgres_query_3()
+    postgres_query_3(postgres_username, postgres_password)
     mongo_query_3()
 
     # QUERY 4
     print("QUERY #4")
-    postgres_query_4()
+    postgres_query_4(postgres_username, postgres_password)
     mongo_query_4()
 
     # QUERY 5
     print("QUERY #5")
-    postgres_query_5()
+    postgres_query_5(postgres_username, postgres_password)
     mongo_query_5()
 
 
