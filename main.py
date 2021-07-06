@@ -7,6 +7,9 @@ import time
 import argparse
 
 
+CANTIDAD_DE_REGISTROS = 10000
+
+
 def set_username(name):
     name_split = name.split()
     return name_split[0][0] + name_split[1]
@@ -35,7 +38,7 @@ def main():
 
     print("Generando dataset...")
     timer_start = time.time()
-    for x in range(10000):  # 100k en 100 segundos
+    for x in range(CANTIDAD_DE_REGISTROS):  # 100k en 100 segundos
         company = {}
         company['name'] = fake.company()
         company['suffix'] = fake.company_suffix()
