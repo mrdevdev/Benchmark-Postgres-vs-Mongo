@@ -53,18 +53,22 @@ def postgres_query_6(dataset, username, password):
         password=password)
 
     cur = conn.cursor()
+    query = "INSERT INTO usersJson (userData) VALUES ('{0}')".format(dataset[0])
     timer_start = time.time()
-    for x in range(len(dataset)):
-        cur.execute("INSERT INTO usersJson (userData) VALUES ('{0}');".format(dataset[x]))
+    for x in range(1, len(dataset)):
+        query = query + ",('{0}')".format(dataset[x])
+    cur.execute(query + ";")
     conn.commit()
     timer_end = time.time()
     print("\tQuery 6 - Postgres - with JSON: {0} segundos".format(timer_end - timer_start))
     cur.close()
 
     cur = conn.cursor()
+    query = "INSERT INTO usersJson (userData) VALUES ('{0}'::jsonb)".format(dataset[0])
     timer_start = time.time()
-    for x in range(len(dataset)):
-        cur.execute("INSERT INTO usersJsonB (userData) VALUES ('{0}'::jsonb);".format(dataset[x]))
+    for x in range(1, len(dataset)):
+        query = query + ",('{0}'::jsonb)".format(dataset[x])
+    cur.execute(query + ";")
     conn.commit()
     timer_end = time.time()
     print("\tQuery 6 - Postgres - with JSONB: {0} segundos".format(timer_end - timer_start))
