@@ -1,5 +1,10 @@
 # Benchmark-Postgres-vs-Mongo
 
+## Links
+* [Informe](https://docs.google.com/document/d/1X7qrpyW4JWgE25veYTifpEarNuxL4cPBbnF-FGUBINY/edit?usp=sharing)
+* [Presentación](https://docs.google.com/presentation/d/1wJtjTX04MANF8wn-ZGsT3cJWw3n9WBs4bOzgqBTaWzw/edit?usp=sharing)
+* [Resultados](https://docs.google.com/spreadsheets/d/116z8F1QnO63OAZjMEe2_EbflItnPGB3AE0wfru-xzDM/edit?usp=sharing)
+
 Nadie duda de lo bueno que es Mongo manejando datos JSON. El uso de índices y su tipo de dato BSON lo coloca muy por encima de muchas otras bases de datos.
 
 Sin embargo, muchas personas se suelen olvidar que hasta hace no más de 5 años, Postgres era considerado superior. Era más rápido en las búsquedas de datos JSON, y ocupaba menos espacio en el almacenamiento. Todo gracias a su tipo de datos JSONB.
