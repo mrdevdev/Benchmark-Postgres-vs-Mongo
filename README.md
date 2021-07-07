@@ -14,6 +14,7 @@ En este trabajo práctico, veremos el estado actual en el que ambas bases de dat
 ## Requisitos para la ejecución
 
 * Para correr este trabajo práctico, es necesario tener Postgres y MongoDB corriendo en sus puertos default en Localhost.
+* MongoDB debe estar listo para correrse sin usuario y contraseña. En cambio, el usuario y contraseña de Postgres se debe especificar como argumento de entrada (mirar sección "Ejecución" más abajo)
 * A su vez, el TP usará la base de datos "postgres" para hacer las queries en PostgreSQL.
 * Hay que tener Python >= 3 instalado.
 * Por último, es necesario tener instaladas algunas librerías de Python para el correcto funcionamiento. Con los siguientes comandos se pueden instalar:
