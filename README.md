@@ -30,8 +30,8 @@ Siendo <MY_USERNAME> y <MY_PASS> el usuario y contraseña para acceder a su base
 
 ## ATENCIÓN
 
-La ejecución del programa está puesta para que se inserten 5 millones de registros en las bases de datos. Esta cantidad tarda aproximadamente 1 o 2 horas en completarse, dependiendo fuertemente de la capacidad de procesamiento de su computadora.
-Si quiere probar con menos cantidad de registros, modifique el valor de la variable "CANTIDAD_DE_REGISTROS" en el archivo main.py.
+La ejecución del programa está puesta para que se inserten 1 millón de registros en las bases de datos. Esta cantidad tarda de 5 a 30 minutos en completarse, dependiendo fuertemente de la capacidad de procesamiento de su computadora.
+Si quiere probar con menos (o más) cantidad de registros, modifique el valor de la variable "CANTIDAD_DE_REGISTROS" en el archivo main.py.
 
 ## Autores
 
